@@ -1,5 +1,5 @@
 from rest_framework import routers
-from .api import ProductsViewSet, ReviewsViewSet, ReturnsViewSet, PaymentsViewSet, SubscriptionsViewSet, UsersViewSet
+from .api import ProductsViewSet, ReviewsViewSet, ReturnsViewSet, PaymentsViewSet, SubscriptionsViewSet, UsersViewSet, InventoryViewSet
 
 router = routers.DefaultRouter()
 
@@ -9,6 +9,6 @@ router.register('api/v1/subscriptions', SubscriptionsViewSet,'subscriptions')
 router.register('api/v1/reviews', ReviewsViewSet,'reviews')
 router.register('api/v1/returns', ReturnsViewSet,'returns')
 router.register('api/v1/payments', PaymentsViewSet,'payments')
-router.register('api/v1/inventory', PaymentsViewSet,'inventory')
+router.register('api/v1/inventory', InventoryViewSet,'inventory')
 
 urlpatterns = router.urls
