@@ -14,6 +14,20 @@ class Products(models.Model):
         verbose_name = "Product"
         verbose_name_plural = "Products"
 
+class Inventory(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    category = models.CharField(max_length=100)
+    presentation = models.CharField(max_length=100)
+    cuant = models.IntegerField()
+    cost = models.DecimalField(max_digits=10, decimal_places=2)
+    created_at = models.DateTimeField(auto_now_add=True)  
+    class Meta:
+        db_table = "inventory"
+        verbose_name = "Inventory"
+        verbose_name_plural = "Inventories"
+
 class Users(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)

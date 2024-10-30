@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Products, Reviews, Users, Subscriptions, Returns, Payments
+from .models import Products, Reviews, Users, Subscriptions, Returns, Payments, Inventory
 
 
 class ProductsSerializer(serializers.ModelSerializer):
@@ -40,5 +40,12 @@ class UsersSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Users
+        fields = '__all__'
+        read_only_fields = ['created_at',]
+
+class InventorySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Inventory
         fields = '__all__'
         read_only_fields = ['created_at',]

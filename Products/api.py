@@ -1,7 +1,7 @@
-from .models import Products,Users,Subscriptions,Reviews,Returns,Payments
+from .models import Products,Users,Subscriptions,Reviews,Returns,Payments, Inventory
 from rest_framework import serializers
 from rest_framework import viewsets, permissions
-from .serializer import ProductsSerializer,UsersSerializer,SubscriptionsSerializer,ReviewsSerializer,ReturnsSerializer,PaymentsSerializer
+from .serializer import ProductsSerializer,UsersSerializer,SubscriptionsSerializer,ReviewsSerializer,ReturnsSerializer,PaymentsSerializer, InventorySerializer
 
 class ProductsViewSet(viewsets.ModelViewSet):
     queryset = Products.objects.all()
@@ -45,3 +45,10 @@ class PaymentsViewSet(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = PaymentsSerializer
+
+class InventoryViewSet(viewsets.ModelViewSet):
+    queryset = Inventory.objects.all()
+    permission_classes = [
+        permissions.AllowAny
+    ]
+    serializer_class = InventorySerializer

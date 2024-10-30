@@ -9,5 +9,6 @@ router.register('api/v1/subscriptions', SubscriptionsViewSet,'subscriptions')
 router.register('api/v1/reviews', ReviewsViewSet,'reviews')
 router.register('api/v1/returns', ReturnsViewSet,'returns')
 router.register('api/v1/payments', PaymentsViewSet,'payments')
+router.register('api/v1/inventory', PaymentsViewSet,'inventory')
 
 urlpatterns = router.urls
